@@ -1,0 +1,66 @@
+.clock-info {
+	.info-list {
+		height: 120px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.weather {
+			width: 240px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 12px;
+
+			&-item {
+				display: flex;
+				gap: 9px;
+				font-size: 14px;
+				font-weight: 400;
+				color: var(--color-neutral-6);
+			}
+		}
+
+		.statistics {
+			flex: 1;
+			display: flex;
+			justify-content: space-between;
+
+			.statistics-item {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 12px;
+
+				.right {
+					display: inline-block;
+					.title {
+						font-size: 14px;
+						color: var(--color-neutral-6);
+						margin-bottom: 4px;
+					}
+					.data {
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: baseline;
+						gap: 12px;
+
+						.current-value {
+							font-size: 20px;
+							font-weight: 600;
+						}
+
+						.max-value {
+							color: var(--color-neutral-6);
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

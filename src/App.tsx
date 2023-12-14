@@ -1,11 +1,8 @@
-import Layout from './layout'
-
+import { useOutlet } from 'react-router-dom'
+import routers from './routers'
 function App() {
-	return (
-		<>
-			<Layout></Layout>
-		</>
-	)
+	const outlet = useOutlet(routers)
+	return outlet
 }
 
 export default App
