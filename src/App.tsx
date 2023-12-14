@@ -1,7 +1,7 @@
-import { useOutlet } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import routers from './routers'
 function App() {
-	const outlet = useOutlet(routers)
+	const outlet = useRoutes(routers)
 	return outlet
 }
 
