@@ -1,3 +1,8 @@
+import './index.scss'
 export default function RightSider() {
-	return <div>RightSider</div>
+	return (
+		<>
+			<div className='rightSidebar'></div>
+		</>
+	)
 }
