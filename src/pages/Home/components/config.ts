@@ -5,19 +5,19 @@ export const clockInfoDataList = [
 		title: '本周打卡',
 		unit: 'h',
 		maxValue: 38,
-		icon: '../../../../public/doc.png',
+		icon: '../../../../doc.png',
 	},
 	{
 		title: '当前排名',
 		unit: '名',
 		maxValue: 38,
-		icon: '../../../../public/task.png',
+		icon: '../../../../task.png',
 	},
 	{
 		title: '今日截止事项',
 		unit: '个',
 		maxValue: 10,
-		icon: '../../../../public/chat.png',
+		icon: '../../../../chat.png',
 	},
 ]
 

@@ -1,17 +1,19 @@
-import { weatherInfoList, clockInfoDataList } from '../../config'
+import { weatherInfoList, clockInfoDataList } from '../config'
 
 import './index.scss'
 export default function ClockInfo() {
 	return (
 		<div className='clock-info'>
+			{/* 欢迎语 */}
 			<h2>🎉 欢迎回来, 大帅比</h2>
 
 			<div className='info-list'>
+				{/* 头部左侧天气栏 */}
 				<div className='weather'>
 					{weatherInfoList.map((item) => (
 						<div
 							key={item.text}
-							className='wether-item'
+							className='weather-item'
 						>
 							<div>{item.date}</div>
 							<div>{item.text}</div>
@@ -19,36 +21,35 @@ export default function ClockInfo() {
 						</div>
 					))}
 				</div>
-			</div>
 
-			<div className='statistics'>
-				{clockInfoDataList.map((item, _index) => (
-					<div
-						key={item.title}
-						className='statistics-item'
-					>
-						<div className='left'>
-							<img
-								src={item.icon}
-								alt=''
-							/>
-						</div>
+				{/* 头部右侧信息栏 */}
+				<div className='statistics'>
+					{clockInfoDataList.map((item, _index) => (
+						<div
+							key={item.title}
+							className='statistics-item'
+						>
+							<div className='left'>
+								<img src={item.icon} />
+							</div>
 
-						<div className='right'>
-							<div className='tiitle'>{item.title}</div>
-							<div className='data'>
-								<span className='current-value'>
-									{/* // todo: 等待后面数据拿到后，改成真实数据 */}
-									{(Math.random() % 10).toString().substring(2, 3) + item.unit}
-								</span>
-								<span className='max-value'>
-									/ {item.maxValue}
-									{item.unit}
-								</span>
+							<div className='right'>
+								<div className='title'>{item.title}</div>
+								<div className='data'>
+									<span className='current-value'>
+										{/* // todo: 等待后面数据拿到后，改成真实数据 */}
+										{(Math.random() % 10).toString().substring(2, 3) +
+											item.unit}
+									</span>
+									<span className='max-value'>
+										/ {item.maxValue}
+										{item.unit}
+									</span>
+								</div>
 							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
 		</div>
 	)

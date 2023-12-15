@@ -4,7 +4,7 @@ $footer-height: 14px; // footer后面再加
 $footer-top-gap: 40px;
 $common-gap: 14px;
 $common-radius: 4px;
-.basicLayout {
+.basic-layout {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -46,7 +46,7 @@ $common-radius: 4px;
 			box-shadow: 1px 1px 6px #aaa;
 			border-radius: $common-radius;
 			padding: $common-gap;
-			overflow: hidden;
+			// overflow: hidden;
 		}
 
 		.right-sider {

@@ -13,7 +13,7 @@ const LayoutContent = ALayout.Content
 const LayoutFooter = ALayout.Footer
 export default function Layout() {
 	return (
-		<ALayout className='basicLayout'>
+		<ALayout className='basic-layout'>
 			<LayoutHeader className='header'>
 				<Header></Header>
 			</LayoutHeader>
@@ -31,7 +31,7 @@ export default function Layout() {
 					<Content></Content>
 				</LayoutContent>
 
-				<LayoutSider className='sider rightSider'>
+				<LayoutSider className='sider right-sider'>
 					<RightSider></RightSider>
 				</LayoutSider>
 			</div>

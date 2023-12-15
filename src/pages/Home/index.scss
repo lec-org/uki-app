@@ -1,0 +1,22 @@
+.home-content-wrapper {
+	display: flex;
+	height: 100%;
+	gap: 24px;
+
+	.home-content-header {
+		border-bottom: 1px solid #3333;
+		margin-bottom: 1em;
+	}
+
+	.home-content-left {
+		flex: 2;
+		width: 100%;
+
+		.home-content-main {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			max-height: 300px;
+		}
+	}
+}

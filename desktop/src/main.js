@@ -6,8 +6,8 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 function createWindow() {
 	const win = new BrowserWindow({
-		width: 1160,
-		height: 752,
+		width: 1440,
+		height: 720,
 		minHeight: 632,
 		minWidth: 960,
 		show: false,
@@ -23,7 +23,7 @@ function createWindow() {
 	})
 
 	if (isDevelopment) {
-		win.loadURL('http://localhost:5173/')
+		win.loadURL('http://localhost:5173/home')
 	} else {
 		const entryPath = path.resolve(__dirname, '../../build/index.html')
 		win.loadFile(entryPath)

@@ -6,19 +6,19 @@ import ExtractCard from '../pages/ExtractCard'
 const routers = [
 	{
 		path: '/',
-		element: Layout(),
+		element: <Layout />,
 		children: [
 			{
 				path: '/home',
-				element: Home(),
+				element: <Home />,
 			},
 			{
-				path: '/calender',
-				element: CalendarView(),
+				path: '/calendar',
+				element: <CalendarView />,
 			},
 			{
 				path: '/extractcard',
-				element: ExtractCard(),
+				element: <ExtractCard />,
 			},
 		],
 	},

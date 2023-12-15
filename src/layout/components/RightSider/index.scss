@@ -1,3 +1,72 @@
-.rightSidebar {
+$gap: 14px;
+$icon-size: 24px;
+.right-side {
 	width: 100%;
+	height: 100%;
+	position: relative;
+
+	.settings {
+		position: absolute;
+		right: 4px;
+		top: 0;
+		width: $icon-size;
+		height: $icon-size;
+		cursor: pointer;
+		color: var(--color-neutral-6);
+
+		&:hover {
+			transform: rotate(360deg);
+			transition: 3s linear;
+		}
+	}
+	.platform {
+		&-name {
+			font-size: 16px;
+			margin-bottom: $gap;
+		}
+		&-items {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: $gap * 2;
+
+			.item {
+				text-decoration-line: none;
+				text-align: center;
+				max-width: 72px;
+				min-width: 72px;
+				margin-bottom: $gap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				cursor: pointer;
+				border-radius: 15px;
+
+				box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2),
+					-10px -10px 10px rgba(255, 255, 255, 1);
+
+				transition: all 0.2s ease-out;
+
+				&:hover {
+					// * 内阴影 - 制造下沉效果
+					box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8),
+						inset 10px 10px 15px rgba(0, 0, 0, 0.1),
+						inset -10px -10px 15px rgba(255, 255, 255, 1);
+				}
+				&-icon {
+					width: $icon-size;
+					height: $icon-size;
+					color: rgb(0, 0, 0);
+					margin-bottom: 4px;
+				}
+
+				&-text {
+					font-size: $gap;
+					color: var(--color-neutral-6);
+					text-wrap: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+			}
+		}
+	}
 }

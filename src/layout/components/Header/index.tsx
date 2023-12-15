@@ -19,7 +19,7 @@ export default function Header() {
 				<div className='left'>
 					<div className='logo'>
 						<img
-							src='../../../../public/lec@640x640.png'
+							src='/lec@640x640.png'
 							alt='愉刻Uki'
 							className='pic'
 						/>
