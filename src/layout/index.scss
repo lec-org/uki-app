@@ -46,7 +46,7 @@ $common-radius: 4px;
 			box-shadow: 1px 1px 6px #aaa;
 			border-radius: $common-radius;
 			padding: $common-gap;
-			// overflow: hidden;
+			overflow-x: hidden;
 		}
 
 		.right-sider {
@@ -57,6 +57,6 @@ $common-radius: 4px;
 		}
 	}
 
-	.footer {
-	}
+	// .footer {
+	// }
 }

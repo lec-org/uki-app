@@ -9,7 +9,11 @@ export default function ClockButton() {
 	const clockBtn = useRef(null)
 
 	const handleBtnColorChange = (status: boolean) => {
-		clockBtn.current.style.color = status ? 'green' : 'red'
+		// * 改变打卡按钮的颜色 未打卡状态(clockButttonStatus = false)为#336add
+		clockBtn.current.style.color = status ? '#336add' : 'red'
+		// * 改变打卡按钮图标的大小
+		clockBtn.current.style.width = status ? '70px' : '65px'
+		clockBtn.current.style.height = status ? '70px' : '65px'
 	}
 
 	return (

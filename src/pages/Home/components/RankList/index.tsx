@@ -1,5 +1,5 @@
 import { Radio, Table } from '@arco-design/web-react'
-import { rankListGrades, rankListColumns } from './config'
+import { rankListGrades, rankListColumns } from './config.tsx'
 
 export default function RankList() {
 	const rankListData = [
@@ -204,7 +204,7 @@ export default function RankList() {
 					<Radio value={grade.value}>{grade.text}</Radio>
 				))}
 			</Radio.Group>
-			<Table
+			<Table 
 				columns={rankListColumns}
 				data={rankListData}
 				className='home-content-grade-clock-time-rank-list-table'

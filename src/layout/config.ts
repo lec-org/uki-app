@@ -1,5 +1,5 @@
 import {
-	IconCalendarClock,
+	// IconCalendarClock,
 	IconHome,
 	IconQuestionCircle,
 } from '@arco-design/web-react/icon'
@@ -17,11 +17,11 @@ export const sidebarItems = [
 		icon: IconHome,
 		label: '工作台',
 	},
-	{
-		key: '/calendar',
-		icon: IconCalendarClock,
-		label: '日程表',
-	},
+	// {
+	// 	key: '/calendar',
+	// 	icon: IconCalendarClock,
+	// 	label: '日程表',
+	// },
 	{
 		key: '-1',
 		icon: IconQuestionCircle,

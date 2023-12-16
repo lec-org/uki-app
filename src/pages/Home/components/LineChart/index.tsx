@@ -26,6 +26,7 @@ export default function LineChart() {
 	}
 	useEffect(() => {
 		updateChart()
+			updateChart()
 	})
 	return (
 		<div

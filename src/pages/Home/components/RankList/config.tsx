@@ -30,9 +30,14 @@ export const rankListColumns = [
 	},
 	{
 		title: '用户信息',
-		dataIndex: 'userInfo',
-		render: (row: User) =>
-			`<img src='${row?.avatar}' alt="头像" style="width:50px; height:50px;border-radius:50%;"/>`,
+		dataIndex: 'avatar',
+		render: (row: string) => (
+			<img
+				src={row}
+				alt='头像'
+				style={{ width: '50px', height: '50px', borderRadius: '50%' }}
+			/>
+		),
 	},
 	{
 		title: '当前时长',
@@ -45,16 +50,11 @@ export const rankListColumns = [
 	{
 		title: '完成度',
 		dataIndex: 'completionRate',
-		render: (row: User) =>
-			`${
-				row.completionRate !== 0
-					? Math.round(row.completionRate * 100) + '%'
-					: row.completionRate
-			}`,
+		render: (row: number) => `${row !== 0 ? Math.round(row * 100) + '%' : row}`,
 	},
 	{
 		title: '状态',
 		dataIndex: 'status',
-		render: (row: User) => `${row.status === 1 ? '内卷ing' : '休息中'}`,
+		render: (row: number) => `${row === 1 ? '内卷ing' : '休息中'}`,
 	},
 ]
