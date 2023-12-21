@@ -2,6 +2,7 @@ import Layout from '../layout'
 import Home from '../pages/Home'
 import CalendarView from '../pages/Calendar'
 import ExtractCard from '../pages/ExtractCard'
+import Suspension from '../pages/Suspension'
 
 const routers = [
 	{
@@ -21,6 +22,10 @@ const routers = [
 				element: <ExtractCard />,
 			},
 		],
+	},
+	{
+		path: '/suspension',
+		element: <Suspension />,
 	},
 ]
 

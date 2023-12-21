@@ -3,14 +3,16 @@
 const { BrowserWindow, app, ipcMain } = require('electron/main')
 const { Tray, Menu, nativeImage } = require('electron')
 const { createWindow } = require('./main.js')
-app.whenReady().then(() => {
-	
+const { createSuspensionWindow } = require('./suspension')
 
+app.whenReady().then(() => {
 	// * 进程间通信
 	ipcMain.handle('ping', () => 'pong')
 	// * 创建窗口
+	// * 主界面
 	createWindow()
-
+	// * 悬浮窗
+	createSuspensionWindow()
 	// * 系统托盘
 	const icon = nativeImage.createFromPath(__dirname + '../../public/vite.svg')
 	const tray = new Tray(icon)
@@ -30,7 +32,10 @@ app.whenReady().then(() => {
 
 	// * 如果没有窗口则打开一个窗口
 	app.on('active', () => {
-		if (BrowserWindow.getAllWindows().length === 0) createWindow()
+		if (BrowserWindow.getAllWindows().length === 0) {
+			createWindow()
+			createSuspensionWindow()
+		}
 	})
 })
 

@@ -26,7 +26,6 @@ export default function RightSider() {
 									key={item.text}
 									target='_blank'
 								>
-									
 									<FontAwesomeIcon
 										icon={item.icon}
 										className='item-icon'

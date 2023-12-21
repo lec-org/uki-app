@@ -13,6 +13,7 @@ function createWindow() {
 		show: false,
 		frame: false, // * 取消显示标题栏与控制按钮
 		title: 'Uki', // * 窗口标题(实际上在此无用)
+		resizable: false, // * 禁止缩放窗口
 		webPreferences: {
 			// *用于配置窗口的 Web 集成选项,例如启用 Node.js、预加载脚本等。
 			nodeIntegration: true,

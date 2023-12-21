@@ -1,11 +1,11 @@
 import { weatherInfoList, clockInfoDataList } from '../config'
 
 import './index.scss'
-export default function ClockInfo() {
+export default function ClockInfo({ nickName }: { nickName: string }) {
 	return (
 		<div className='clock-info'>
 			{/* 欢迎语 */}
-			<h2>🎉 欢迎回来, 大帅比</h2>
+			<h2>🎉 欢迎回来, {nickName}</h2>
 
 			<div className='info-list'>
 				{/* 头部左侧天气栏 */}
@@ -24,7 +24,7 @@ export default function ClockInfo() {
 
 				{/* 头部右侧信息栏 */}
 				<div className='statistics'>
-					{clockInfoDataList.map((item, _index) => (
+					{clockInfoDataList.map((item, _) => (
 						<div
 							key={item.title}
 							className='statistics-item'

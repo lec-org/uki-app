@@ -12,7 +12,7 @@ const dropList = (
 	</Menu>
 )
 
-export default function Header() {
+export default function Header({ avatarUrl }) {
 	return (
 		<>
 			<div className='basicHeader'>
@@ -37,7 +37,10 @@ export default function Header() {
 							size={42}
 							className='avatar'
 						>
-							LEC
+							<img
+								src={avatarUrl}
+								alt=''
+							/>
 						</Avatar>
 					</Dropdown>
 				</div>

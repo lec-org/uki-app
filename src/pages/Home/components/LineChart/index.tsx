@@ -4,13 +4,22 @@ import { clockLineChartOption } from './config'
 
 import './index.scss'
 
-export default function LineChart() {
-	const weekClockData = [5, 7, 4, 3, 6, 8, 9]
+const LineChart = ({ dayClockTimeData }: { dayClockTimeData: number[] }) => {
+	console.log(dayClockTimeData)
+
+	// * 获取折线图DOM
 	const chartRef = useRef(null)
-	const dataList = useRef([])
+	// * 作为折线图的数据来源
+	const dataList = useRef<number[][]>([])
+
+	const fake = [0, 16, 0, 0, 0, 0, 0]
+
 	const updateChart = () => {
+		// * 初始化折线图
 		const lineChart = echarts.init(chartRef.current)
-		dataList.current.push(weekClockData)
+		dataList.current.push(dayClockTimeData)
+		console.log(dataList.current)
+
 		clockLineChartOption.series = clockLineChartOption.series.map(
 			(config, index) => {
 				return {
@@ -25,9 +34,10 @@ export default function LineChart() {
 		})
 	}
 	useEffect(() => {
+		console.log('--渲染--LineChart--组件--')
+
 		updateChart()
-			updateChart()
-	})
+	}, [dayClockTimeData])
 	return (
 		<div
 			id='home-content-line-echart'
@@ -35,3 +45,5 @@ export default function LineChart() {
 		></div>
 	)
 }
+
+export default LineChart

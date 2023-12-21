@@ -6,16 +6,24 @@ import Content from './components/Content'
 import { Layout as ALayout } from '@arco-design/web-react'
 
 import './index.scss'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LayoutSider = ALayout.Sider
 const LayoutHeader = ALayout.Header
 const LayoutContent = ALayout.Content
 const LayoutFooter = ALayout.Footer
+
 export default function Layout() {
+	const navigate = useNavigate()
+	const avatar = localStorage.getItem('avatar') || ''
+	useEffect(() => {
+		navigate('/home')
+	}, [])
 	return (
 		<ALayout className='basic-layout'>
 			<LayoutHeader className='header'>
-				<Header></Header>
+				<Header avatarUrl={avatar}></Header>
 			</LayoutHeader>
 
 			<div className='main'>

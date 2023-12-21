@@ -3,15 +3,22 @@ import { sidebarItems } from '../../config'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import './index.scss'
+import { useEffect, useState } from 'react'
 export default function LeftSider() {
 	// * 引入路由Hook
 	const navigate = useNavigate()
-	// * 引入路径Hook
 	const location = useLocation()
+	const [leftSideBarSelectItem, setLeftSideBarSelectItem] = useState([
+		location.pathname,
+	])
+	useEffect(() => {
+		setLeftSideBarSelectItem([location.pathname])
+	}, [location.pathname])
+	// * 引入路径Hook
 
 	return (
 		<Menu
-			defaultSelectedKeys={[location.pathname]}
+			defaultSelectedKeys={leftSideBarSelectItem}
 			style={{ width: '100%' }}
 		>
 			{sidebarItems.map((item) => (
