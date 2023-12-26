@@ -1,10 +1,10 @@
 export const rankListGrades = [
 	{
-		value: 2,
+		value: 2022,
 		text: '2022级',
 	},
 	{
-		value: 1,
+		value: 2023,
 		text: '2023级',
 	},
 ]

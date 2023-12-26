@@ -147,7 +147,7 @@ export const clockLineChartOption = {
 			},
 			axisLine: {
 				show: false,
-				formatter: (val: string) => `${val}h`,
+				formatter: (val: string) => `${val}H`,
 			},
 			splitLine: {
 				show: true,
@@ -159,9 +159,6 @@ export const clockLineChartOption = {
 	],
 	// Data 由外部组件配置
 	series: [
-		{
-			name: '打卡时间',
-		},
 		{
 			name: '打卡时间',
 		},

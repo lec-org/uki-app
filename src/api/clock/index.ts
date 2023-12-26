@@ -77,9 +77,10 @@ export interface clockUnderLecWifiApiRes {
 		code: number
 		data:
 			| {
-					id: string
-					status: number
-					totalDuration: number
+					id?: string
+					status?: number
+					totalDuration?: number
+					// eslint-disable-next-line no-mixed-spaces-and-tabs
 			  }
 			| string
 		msg: string

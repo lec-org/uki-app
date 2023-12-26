@@ -1,4 +1,4 @@
-import { Menu } from '@arco-design/web-react'
+import { Menu, Message } from '@arco-design/web-react'
 import { sidebarItems } from '../../config'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -26,7 +26,9 @@ export default function LeftSider() {
 					<Menu.Item
 						key={item.key}
 						onClick={() => {
-							item.key != '-1' ? navigate(item.key) : null
+							item.key != '-1'
+								? navigate(item.key)
+								: Message.info('更多功能正在开发中')
 						}}
 					>
 						<item.icon />

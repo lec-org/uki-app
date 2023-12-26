@@ -201,12 +201,19 @@ export default function RankList() {
 				type='button'
 			>
 				{rankListGrades.map((grade) => (
-					<Radio value={grade.value}>{grade.text}</Radio>
+					<Radio
+						value={grade.value}
+						key={grade.value}
+						defaultChecked={grade.value == 2022}
+					>
+						{grade.text}
+					</Radio>
 				))}
 			</Radio.Group>
-			<Table 
+			<Table
 				columns={rankListColumns}
 				data={rankListData}
+				pagination={false}
 				className='home-content-grade-clock-time-rank-list-table'
 			></Table>
 		</div>

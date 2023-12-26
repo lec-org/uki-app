@@ -5,12 +5,12 @@ import LineChart from './components/LineChart'
 import RankList from './components/RankList'
 
 import './index.scss'
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { Login, getLoginStatus } from '../../api/user'
 import { getUserWeekClockTime } from '../../api/clock'
 
 export default function Home() {
-	const weekClock = useRef<number[]>([])
+	const [weekClock, setWeekClock] = useState<number[]>([])
 	const nickname = localStorage.getItem('nickname') || ''
 	let token =
 		localStorage.getItem('token') ||
@@ -30,7 +30,10 @@ export default function Home() {
 		token = localStorage.getItem('token') as string
 	}
 	const getEveryDayClockTime = async () => {
-		weekClock.current.length = 0
+		Message.info('已获取打卡数据')
+		// * 清空数组
+		setWeekClock([])
+
 		// * 获取本周每日打卡时长
 		const dayClockData = await getUserWeekClockTime({
 			token,
@@ -39,9 +42,9 @@ export default function Home() {
 
 		const week = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 		for (const i of week) {
-			weekClock.current.push(dayClockData.data.data[i])
+			weekClock.push(dayClockData.data.data[i])
 		}
-		console.log(weekClock.current)
+		console.log(weekClock)
 	}
 	const checkToken = async () => {
 		const res = await getLoginStatus({ token })
@@ -52,12 +55,14 @@ export default function Home() {
 			Message.error('Token 过期啦~~')
 			// todo: 等下写个过期自动再次登录
 			toLogin()
+			checkToken()
 		}
 
 		Message.success('登录成功	')
 		// * 如果token未过期 获取数据
-		// * 获取每日打卡时长
+		// * 获取每日打卡时长 ，
 		getEveryDayClockTime()
+		return
 	}
 
 	useEffect(() => {
@@ -75,7 +80,7 @@ export default function Home() {
 
 						<ALayout.Content className='home-content-main'>
 							<ClockButton token={token} />
-							<LineChart dayClockTimeData={weekClock.current} />
+							<LineChart dayClockTimeData={weekClock} />
 						</ALayout.Content>
 
 						<ALayout.Footer>
